@@ -37,6 +37,6 @@ Checking for support of cipher suites using SHA1 MAC over TLS1.0
 Checking for support of cipher suites not offering encryption over TLS1.0 
 >```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --encryption NULL```
 
-Checking for support of cipher using DHE key exchange with DSS encryption and 256 bits key size over TLS1.2
+Checking for support of cipher suites using DHE key exchange and DSS encryption with 256 bits key size over TLS1.2
 >```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256```
 
