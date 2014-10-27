@@ -25,14 +25,14 @@ Usage: ssl-inspector.rb [options]
 ## Usage examples
 
 Scanning for POODLE
-<pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --name CBC</pre>
+><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --name CBC</pre>
 
 Checking for support of cipher suites using SHA1 MAC over TLS1.0
-<pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --mac SHA</pre>
+><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --mac SHA</pre>
 
 Checking for support of cipher suites not offering encryption over TLS1.0 
-<pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --encryption NULL</pre>
+><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --encryption NULL</pre>
 
 Checking for support of cipher using DHE key exchange with DSS encryption and 256 bits key size over TLS1.2
-<pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256</pre>
+><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256</pre>
 
