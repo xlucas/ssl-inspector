@@ -254,7 +254,7 @@ OptionParser.new do |opts|
   opts.on('-e', '--encryption ALGORITHM', 'Specify an encryption algorithm')         { |e| options.filters << Proc.new { |el| el[:'encryption'] == e.to_sym } }
   opts.on('-k', '--keyexchange ALGORITHM', 'Specify a keyexchange algorithm')        { |k| options.filters << Proc.new { |el| el[:'keyexchange'] == k.to_sym } }
   opts.on('-h', '--host HOST', 'Specify target host')                                { |h| options.host = h }
-  opts.on('-e', '--mac ALGORITHM', 'Specify a MAC algorithm')                        { |m| options.filters << Proc.new { |el| el[:'mac'] == m.to_sym } }
+  opts.on('-m', '--mac ALGORITHM', 'Specify a MAC algorithm')                        { |m| options.filters << Proc.new { |el| el[:'mac'] == m.to_sym } }
   opts.on('-n', '--name NAME', 'Specify a cipher suite partial or full name')        { |n| options.filters << Proc.new { |el| el[:'name'] =~ /#{n}/ } }
   opts.on('-p', '--port PORT', 'Specify target port')                                { |p| options.port = p }
   opts.on('-s', '--specification PROTOCOL', 'Specification SSLv3 or TLSv1.{0,1,2}')  { |s| options.spec = s }
