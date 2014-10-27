@@ -11,7 +11,7 @@ A convenient tool written in Ruby for SSL cipher suites support scanning.
 <pre>
 Usage: ssl-inspector.rb [options]
     -a, --authentication ALGORITHM   Specify an authentication algorithm
-    -b, --bits SIZE                  Specify an encryption key size
+    -b, --bits [<|<=|>=|>]SIZE       Specify an encryption key size
     -e, --encryption ALGORITHM       Specify an encryption algorithm
     -h, --host HOST                  Specify target host
     -k, --keyexchange ALGORITHM      Specify a keyexchange algorithm
@@ -27,6 +27,9 @@ Usage: ssl-inspector.rb [options]
 
 Scanning for POODLE
 ><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --name CBC</pre>
+
+Checking for support of cipher suites using key size lower than 128 bits over SSLv3
+><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --bits '<128'</pre>
 
 Checking for support of cipher suites using SHA1 MAC over TLS1.0
 ><pre>ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --mac SHA</pre>
