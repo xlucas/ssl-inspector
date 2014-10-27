@@ -13,8 +13,8 @@ Usage: ssl-inspector.rb [options]
     -a, --authentication ALGORITHM   Specify an authentication algorithm
     -b, --bits SIZE                  Specify an encryption key size
     -e, --encryption ALGORITHM       Specify an encryption algorithm
-    -k, --keyexchange ALGORITHM      Specify a keyexchange algorithm
     -h, --host HOST                  Specify target host
+    -k, --keyexchange ALGORITHM      Specify a keyexchange algorithm
     -m, --mac ALGORITHM              Specify a MAC algorithm
     -n, --name NAME                  Specify a cipher suite partial or full name
     -p, --port PORT                  Specify target port
