@@ -250,7 +250,7 @@ options.port = 443
 OptionParser.new do |opts|
   opts.banner = 'Usage: ssl-inspector.rb [options]'
   opts.on('-a', '--authentication ALGORITHM', 'Specify an authentication algorithm') { |a| options.filters << Proc.new { |el| el[:'authentication'] == a.to_sym } }
-  opts.on('-b', '--bits SIZE', 'Specify an encryption size')                         { |b| options.filters << Proc.new { |el| el[:'bits'] == b.to_i } }
+  opts.on('-b', '--bits SIZE', 'Specify an encryption key size')                     { |b| options.filters << Proc.new { |el| el[:'bits'] == b.to_i } }
   opts.on('-e', '--encryption ALGORITHM', 'Specify an encryption algorithm')         { |e| options.filters << Proc.new { |el| el[:'encryption'] == e.to_sym } }
   opts.on('-k', '--keyexchange ALGORITHM', 'Specify a keyexchange algorithm')        { |k| options.filters << Proc.new { |el| el[:'keyexchange'] == k.to_sym } }
   opts.on('-h', '--host HOST', 'Specify target host')                                { |h| options.host = h }
