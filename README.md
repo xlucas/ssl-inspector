@@ -40,3 +40,6 @@ Checking for support of cipher suites not offering encryption over TLS1.0
 Checking for support of cipher suites using DHE key exchange and DSS encryption with 256 bits key size over TLS1.2
 >```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256```
 
+## Requirement
+
+Ruby 2.1 installed
