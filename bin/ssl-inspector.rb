@@ -293,11 +293,14 @@ suites.each do |suite|
   s = TCPSocket.new(options.host, options.port)
 
   s.write(handshake.flatten!.pack('C*'))
-  server_hello = s.read(1).unpack('C')[0] == 22
-  h_maj_version, h_min_version = s.read(2).unpack('C')
-  result = (server_hello && PROTOCOLS[options.spec.to_sym] == [h_maj_version.to_i, h_min_version.to_i]) ? 'ENABLED' : 'DISABLED'
-  printf("%-50s [%s]\n", suite[:'name'], result) unless !(result == 'ENABLED' || options.verbose)
-  STDOUT.flush
+  server_hello = s.read(1).unpack('C')[0]
+
+  if server_hello == 22
+    h_maj_version, h_min_version = s.read(2).unpack('C')
+    result = (server_hello && PROTOCOLS[options.spec.to_sym] == [h_maj_version.to_i, h_min_version.to_i]) ? 'ENABLED' : 'DISABLED'
+    printf("%-50s [%s]\n", suite[:'name'], result) unless !(result == 'ENABLED' || options.verbose)
+    STDOUT.flush
+  end
 
   s.close
 
