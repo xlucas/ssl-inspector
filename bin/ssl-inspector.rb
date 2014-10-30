@@ -269,16 +269,17 @@ abort('You must specify a target host') if options.host.nil?
 abort('You must specify a protocol version') if options.spec.nil?
 
 suites = options.filters.empty? ? CIPHER_SUITES : filter(CIPHER_SUITES, options.filters)
+protocol = PROTOCOLS[options.spec.to_sym]
 
 suites.each do |suite|
 
   handshake = [
       0x16,
-      PROTOCOLS[options.spec.to_sym],
+      protocol,
       0x00, 0x2D,
       0x01,
       0x00, 0x00, 0x29,
-      PROTOCOLS[options.spec.to_sym],
+      protocol,
       0x53, 0x4A, 0x84, 0xA9,
       0x00, 0x01, 0x02, 0x03,   0x04, 0x05, 0x06, 0x07,   0x08, 0x09, 0x0A, 0x0B,
       0x0C, 0x0D, 0x0E, 0x0F,   0x10, 0x11, 0x12, 0x13,   0x14, 0x15, 0x16, 0x17,
@@ -297,7 +298,7 @@ suites.each do |suite|
 
   if server_hello == 22
     h_maj_version, h_min_version = s.read(2).unpack('C*')
-    result = (server_hello && (PROTOCOLS[options.spec.to_sym] == [h_maj_version.to_i, h_min_version.to_i])) ? 'ENABLED' : 'DISABLED'
+    result = (server_hello && (protocol == [h_maj_version.to_i, h_min_version.to_i])) ? 'ENABLED' : 'DISABLED'
   end
 
   printf("%-50s [%s]\n", suite[:'name'], result) unless !(result == 'ENABLED' || options.verbose)
