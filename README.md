@@ -7,6 +7,13 @@ A convenient tool written in Ruby for SSL cipher suites support scanning.
 
 **I will not be taken responsible for the damage that could be done using this tool. It is shared as a tool for internal security auditing.**
 
+##Installation
+```bash
+user@host $ wget "https://raw.githubusercontent.com/xlucas/ssl-inspector/master/bin/ssl-inspector.rb" \
+-o /usr/local/bin/ssl-inspector
+user@host $ chmod +x !$
+```
+
 ##Synopsis
 ```text
 Usage: ssl-inspector.rb [options]
