@@ -16,7 +16,7 @@ user@host $ chmod +x !$
 
 ##Synopsis
 ```text
-Usage: ssl-inspector.rb [options]
+Usage: ssl-inspector [options]
     -a, --authentication ALGORITHM   Specify an authentication algorithm
     -b, --bits [<|<=|=>|>]SIZE       Specify an encryption key size
     -e, --encryption ALGORITHM       Specify an encryption algorithm
