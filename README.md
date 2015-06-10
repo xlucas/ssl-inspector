@@ -33,19 +33,19 @@ Usage: ssl-inspector [options]
 ## Usage examples
 
 Scanning for POODLE
->```ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --name CBC```
+>```ssl-inspector -h www.domain.com -p 443 -s SSLv3 --name CBC```
 
 Checking for support of cipher suites using key size lower than 128 bits over SSLv3
->```ruby ssl-inspector.rb -h www.domain.com -p 443 -s SSLv3 --bits '<128'```
+>```ssl-inspector -h www.domain.com -p 443 -s SSLv3 --bits '<128'```
 
 Checking for support of cipher suites using SHA1 MAC over TLS1.0
->```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --mac SHA```
+>```ssl-inspector -h www.domain.com -p 443 -s TLSv1.0 --mac SHA```
 
 Checking for support of cipher suites not offering encryption over TLS1.0 
->```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.0 --encryption NULL```
+>```ssl-inspector -h www.domain.com -p 443 -s TLSv1.0 --encryption NULL```
 
 Checking for support of cipher suites using DHE key exchange and DSS encryption with 256 bits key size over TLS1.2
->```ruby ssl-inspector.rb -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256```
+>```ssl-inspector -h www.domain.com -p 443 -s TLSv1.2 -k DHE -e DSS -b 256```
 
 ## Requirement
 
