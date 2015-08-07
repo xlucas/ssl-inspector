@@ -293,7 +293,11 @@ suites.each do |suite|
 
   s = TCPSocket.new(options.host, options.port)
   s.write(handshake.flatten!.pack('C*'))
-  server_hello = s.read(1).unpack('C')[0]
+  server_resp = s.read(1)
+  server_hello = -1
+  if server_resp
+     server_hello = server_resp.unpack('C')[0]
+  end
   result = 'DISABLED'
 
   if server_hello == 22
