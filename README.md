@@ -10,7 +10,7 @@ A convenient tool written in Ruby for SSL cipher suites support scanning.
 ##Installation
 ```bash
 user@host $ wget "https://raw.githubusercontent.com/xlucas/ssl-inspector/master/bin/ssl-inspector.rb" \
--o /usr/local/bin/ssl-inspector
+-O /usr/local/bin/ssl-inspector
 user@host $ chmod +x !$
 ```
 
