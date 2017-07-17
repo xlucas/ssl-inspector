@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby
 
 # ******************************************************************************
 # SSL cipher scanning tool for SSLv3 and TLSv1 TLSv1.1 TLSv1.2
